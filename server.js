@@ -17,7 +17,7 @@ app.post("/webhook", line.middleware(config), (req, res) => {
 function handleEvent(event) {
   if (event.type === "message" && event.message.type === "text" && event.message.text === "我愛襪襪") {
     // 👇 改成你ESP32的IP，例如 http://192.168.1.100/servo
-    axios.get("http://你的ESP32的IP/servo");
+    axios.get("http://192.168.0.152/servo");
 
     return client.replyMessage(event.replyToken, {
       type: "text",
